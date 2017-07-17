@@ -1,0 +1,10 @@
+.intro-main {
+	text-align: center;
+	padding-top: 25rem;
+	
+}
+body{
+	background: #e8b951 url("../images/template-gif.gif") no-repeat center center;
+	padding-top: 30px;
+	font-family: Lato;
+}
