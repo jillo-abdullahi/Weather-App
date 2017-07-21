@@ -2,22 +2,68 @@
 <html lang="eng">
   <head>
     <title>Your weather</title>
-	<link rel="shortcut icon" href="./images/logo.ico"/>
+	  <link rel="shortcut icon" href="./images/logo.ico"/> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <link rel="stylesheet" href="./css/style.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--==========Bootstrap=================-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--==========Custom style=============-->
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+     
+
+   <!--=============Custom Google Fonts================-->
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+   <!--===========Font Awesome================-->
+   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+   
   </head>
   <body>
-    <div class="intro-main">
-        <h1>Weather App coming soon!</h1>
+    <div class="container-fluid main">
+
+        <div class="row">
+            <div id="header-box">
+              <h2>Weather</h2>
+              <h4>Date</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="well well-lg" id="weather-box">
+            <canvas id="weather-icon" width="100" height="100"></canvas>
+          </div>
+
+        </div>
+        
+        <div class="row">
+          <div id="forecast-main">
+            <div class="col-sm-3" >
+              <div class="well well-sm"><p>Forecast info</p></div>
+            </div>
+            <div class="col-sm-3" >
+              <div class="well well-sm"><p>Forecast info</p></div>
+            </div>
+            <div class="col-sm-3" >
+              <div class="well well-sm"><p>Forecast info</p></div>
+            </div>
+            <div class="col-sm-3" >
+              <div class="well well-sm"><p>Forecast info</p></div>
+            </div>
+            
+          </div>
+        <!---->
     </div>
+    <!--==============JQuery================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <!--==============Bootstrap JQuery==============-->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     <!--=============Custom JQuery==================-->
     <script src="./js/main.js"></script>
+    <script src="./js/skycons.js"></script>
+
   </body>
   </html>
