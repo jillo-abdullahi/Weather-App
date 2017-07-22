@@ -18,16 +18,15 @@
 
    <!--===========Font Awesome================-->
    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
    
   </head>
   <body>
     <div class="container-fluid main">
-
-        <div class="row">
+        <div id ="weather-content">
+            <div class="row">
             <div id="header-box">
-              <h2>Weather</h2>
-              <h4>Date</h4>
+              <h2 id="day"></h2>
+              <h4 id="date"></h4>
           </div>
         </div>
         <div class="row">
@@ -40,21 +39,44 @@
         <div class="row">
           <div id="forecast-main">
             <div class="col-sm-3" >
-              <div class="well well-sm"><p>Forecast info</p></div>
+              <div class="well well-sm" style="text-align: center;">
+                <h4 id="day1">Loading info...</h4>
+                <img id="icon1" src="#" alt="Loading icon...">
+                <h4 id="temp1">Loading temp...</h4>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="well well-sm" style="text-align: center;">
+                <h4 id="day2">Loading info...</h4>
+                <img id="icon2" src="#" alt="Loading icon...">
+                <h4 id="temp2">Loading temp...</h4>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="well well-sm" style="text-align: center;">
+                <h4 id="day3">Loading info...</h4>
+                <img id="icon3" src="#" alt="Loading icon....">
+                <h4 id="temp3">Loading temp...</h4>
+              </div>
             </div>
             <div class="col-sm-3" >
-              <div class="well well-sm"><p>Forecast info</p></div>
-            </div>
-            <div class="col-sm-3" >
-              <div class="well well-sm"><p>Forecast info</p></div>
-            </div>
-            <div class="col-sm-3" >
-              <div class="well well-sm"><p>Forecast info</p></div>
+              <div class="well well-sm" style="text-align: center;">
+                <h4 id="day4">Loading info...</h4>
+                <img id="icon4" alt="forecast icon...">
+                <h4 id="temp4">Loading temp...</h4>
+              </div>
             </div>
             
           </div>
         <!---->
-    </div>
+        </div>
+      </div>
+      <div class="landing-page">
+          <button type="button" href="#weather-content" class="btn btn-primary btn-md" id="getWeatherBtn" data-transition="flow">Get Weather</button>
+      </div>
+        
+  </div>
+
     <!--==============JQuery================-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
@@ -63,7 +85,12 @@
 
      <!--=============Custom JQuery==================-->
     <script src="./js/main.js"></script>
+
+    <!--=====Skycon for weather animated icons===-->
     <script src="./js/skycons.js"></script>
+
+    <!--=====Moment.js for dates===-->
+     <script src="./js/moment.min.js"></script>
 
   </body>
   </html>
