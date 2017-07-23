@@ -14,13 +14,6 @@ $(document).ready(function(){
 	$("#date").html( moment().format('MMMM Do YYYY, h:mm a') );
 	$("#day").html(moment().format('dddd') );
 
-
-
-	/*var skycons = new Skycons({"color": "#000"});
-  	skycons.add("weather-icon", Skycons.PARTLY_CLOUDY_DAY);
-  	skycons.play();*/
-
-
 	function getWeatherInfo(){
 
 		//Get location
@@ -47,6 +40,32 @@ $(document).ready(function(){
 			//Ajax call for current weather
 			$.getJSON(weatheruri, function(info){
 				console.log(info.current.temp_c);
+
+				//setting up variables.
+				var region = info.location.region+", "+info.location.country;
+				var temp_c = info.current.temp_c;
+				var temp_f = info.current.temp_f;
+				var windspeed = info.current.wind_mph;
+				var icon = "https:"+info.current.condition.icon;
+				var description = info.current.condition.text;
+				var pressure = info.current.pressure_mb;
+				var humidity = info.current.humidity;
+
+				//Displaying info
+				$("#region").text(region);
+				$("#temp_c").html(temp_c+"<span>&#8451;</span>");
+				$("#conversion-btn").on("click",function(){
+
+					$("#temp_c").html(temp_f+"<span>&#8457;</span>");
+				});
+
+				$("#temp-icon").attr('src',icon);
+				$("#description").text(description);
+				$("#winds").text(windspeed);
+				$("#hum").text(humidity);
+				$("#pres").text(pressure);
+
+				
 			});
 
 			//Ajax call for forecast conditions
@@ -98,6 +117,10 @@ $(document).ready(function(){
 			function error(err) {
 			  console.warn(`ERROR(${err.code}): ${err.message}`);
 			};
+
+			//Possible errors to cater for:
+			//Timeout expired
+			//Undefined
 
 			navigator.geolocation.getCurrentPosition(success, error, options);
 
