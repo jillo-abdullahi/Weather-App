@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="eng">
   <head>
-    <title>Your weather</title>
+    <title>weather App</title>
 	  <link rel="shortcut icon" href="./images/logo.ico"/> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,11 +29,46 @@
               <h4 id="date"></h4>
           </div>
         </div>
-        <div class="row">
+        
           <div class="well well-lg" id="weather-box">
-            <canvas id="weather-icon" width="100" height="100"></canvas>
+            <div class="row">
+            <h4 id="region">Some region</h4>
+
+            <div class="col-sm-6">
+              <div id="today-weather">
+                <h5>Today</h5>
+                <h2 id="temp_c">19&#8451;</h2>
+                <p id="description">Partly Cloudy</p>
+               <div id="images">
+                  <img src="https://cdn.apixu.com/weather/64x64/day/116.png" alt="condition icon" id="temp-icon"><br/>
+                  <img src="./images/home.png" alt="Home icon" />
+               </div>
+                
+              </div>
+            </div>
+            <div class="col-sm-6">
+                <div id="more-info">
+                  <div id="conversion">
+                    <button type="button" class="btn" id="conversion-btn" >Convert to &#8457;</button>
+                  </div>
+                  <div id="wind"><i class="fa fa-flag-checkered fa-lg"></i> Windspeed: <span id="winds">54</span>mph</div>
+                  <div id="pressure"><i class="fa fa-tachometer fa-lg" aria-hidden="true"></i> Pressure: <span id="pres">1611</span>hPa</div>
+                  <div id="humidity"><i class="fa fa-tint fa-lg"></i> Humidity: <span id="hum">56</span>%</div>
+
+                </div>
+            </div>
+
+      
           </div>
 
+          <div class="row">
+            <div id="extra-info">
+                <p>View forecast for the next 4 days below</p>
+                <i style="font-size:30px" class="fa">&#xf107;</i>
+            </div>
+            
+          </div>
+        
         </div>
         
         <div class="row">
@@ -41,28 +76,28 @@
             <div class="col-sm-3" >
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day1">Loading info...</h4>
-                <img id="icon1" src="#" alt="Loading icon...">
+                <img id="icon1" alt="Loading icon...">
                 <h4 id="temp1">Loading temp...</h4>
               </div>
             </div>
             <div class="col-sm-3">
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day2">Loading info...</h4>
-                <img id="icon2" src="#" alt="Loading icon...">
+                <img id="icon2" alt="Loading icon...">
                 <h4 id="temp2">Loading temp...</h4>
               </div>
             </div>
             <div class="col-sm-3">
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day3">Loading info...</h4>
-                <img id="icon3" src="#" alt="Loading icon....">
+                <img id="icon3" alt="Loading icon....">
                 <h4 id="temp3">Loading temp...</h4>
               </div>
             </div>
             <div class="col-sm-3" >
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day4">Loading info...</h4>
-                <img id="icon4" alt="forecast icon...">
+                <img id="icon4" alt="Loading icon...">
                 <h4 id="temp4">Loading temp...</h4>
               </div>
             </div>

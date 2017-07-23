@@ -6,7 +6,7 @@ body{
 .main {
 	width: 80%;
 	margin: 2rem auto;
-	height: 65rem;
+	height: 70rem;
 	background-color: rgb(233, 240, 240);
   	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   	border-radius: 3px;
@@ -37,7 +37,7 @@ body{
 #weather-box {
 	margin: 2rem auto;
 	width: 80%;
-	height: 30rem;
+	height: 35rem;
 	border-radius: 3px;
 }
 
@@ -46,7 +46,6 @@ body{
 	margin: 2rem auto;
 }
 
-/*On document load*/
 #weather-content {
 	display: none;
 }
@@ -60,4 +59,43 @@ body{
 #getWeatherBtn {
 	margin: auto;
 	width: 100%;
+}
+
+#today-weather {
+	width: 100%;
+	border: 1px solid #bdc3c7;
+	border-radius: 2px;
+	padding: 2px;
+	text-align: center;
+}
+
+#today-weather h5 {
+	border: 1px solid #bdc3c7;
+	border-radius: 2px;
+	padding: 2px;
+	background-color: rgb(233, 240, 240);
+}
+
+#extra-info {
+	text-align: center;
+}
+#images {
+	border: 1px solid #bdc3c7;
+	border-radius: 2px;
+	padding: 2px;
+	background-color: rgb(233, 240, 240);
+}
+
+#more-info {
+	width: 100%;
+	border: 1px solid #bdc3c7;
+	border-radius: 2px;
+	padding: 2px;
+	text-align: left;
+}
+
+#more-info div {
+	border: 1px solid #bdc3c7;
+	border-radius: 2px;
+	padding: 2px;
 }
