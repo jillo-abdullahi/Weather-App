@@ -1,12 +1,12 @@
 body{
-	font-family: Ubuntu, Arial, 'San serif';
+	font-family: Adamina, Arial, 'San serif';
 	background: url("../images/cloudy-day.png");
 	
 }
 .main {
 	width: 80%;
-	margin: 2rem auto;
-	height: 70rem;
+	margin: 1rem auto;
+	height: 60rem;
 	background-color: rgb(233, 240, 240);
   	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   	border-radius: 3px;
@@ -20,10 +20,11 @@ body{
 
 }
 
-.well {
+#weather-box {
 	background-color: rgb(245, 245, 245);
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);	
 }
+
 
 #forecast-main .well{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -34,20 +35,21 @@ body{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+
+
 #weather-box {
-	margin: 2rem auto;
-	width: 80%;
-	height: 35rem;
+	margin: 0px auto;
+	width: 95%;
+	height: 52rem;
 	border-radius: 3px;
+	padding-top: 0px;
 }
 
-#forecast-main {
-	width: 90%;
-	margin: 2rem auto;
-}
+
 
 #weather-content {
 	display: none;
+
 }
 
 .landing-page {
@@ -61,41 +63,30 @@ body{
 	width: 100%;
 }
 
-#today-weather {
+#today-weather .well {
 	width: 100%;
-	border: 1px solid #bdc3c7;
-	border-radius: 2px;
-	padding: 2px;
 	text-align: center;
-}
-
-#today-weather h5 {
-	border: 1px solid #bdc3c7;
-	border-radius: 2px;
-	padding: 2px;
 	background-color: rgb(233, 240, 240);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  	border-radius: 3px;
 }
-
-#extra-info {
-	text-align: center;
-}
-#images {
-	border: 1px solid #bdc3c7;
-	border-radius: 2px;
-	padding: 2px;
-	background-color: rgb(233, 240, 240);
+#today-weather .well:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 #more-info {
-	width: 100%;
-	border: 1px solid #bdc3c7;
-	border-radius: 2px;
 	padding: 2px;
-	text-align: left;
+	text-align: center;
 }
 
-#more-info div {
+#divider {
 	border: 1px solid #bdc3c7;
-	border-radius: 2px;
-	padding: 2px;
+	width: 50%;
+}
+#region {
+	margin-left: 12px;
+}
+#header-box {
+	margin-top: 2px;
 }

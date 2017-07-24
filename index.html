@@ -8,6 +8,7 @@
 
     <!--==========Bootstrap=================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
     <!--==========Custom style=============-->
     <link rel="stylesheet" href="./css/style.css" type="text/css">
@@ -15,6 +16,7 @@
 
    <!--=============Custom Google Fonts================-->
    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
 
    <!--===========Font Awesome================-->
    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -25,90 +27,86 @@
         <div id ="weather-content">
             <div class="row">
             <div id="header-box">
-              <h2 id="day"></h2>
-              <h4 id="date"></h4>
+              <h4 id="day"></h4>
+              <h5 id="date"></h5>
           </div>
         </div>
         
           <div class="well well-lg" id="weather-box">
             <div class="row">
-            <h4 id="region">Some region</h4>
+            <h5 id="region">Some region</h5>
 
-            <div class="col-sm-6">
+            <div class="col-sm-4">
               <div id="today-weather">
-                <h5>Today</h5>
+                <div class="well">
+                <h4>Today</h4>
                 <h2 id="temp_c">19&#8451;</h2>
                 <p id="description">Partly Cloudy</p>
-               <div id="images">
                   <img src="https://cdn.apixu.com/weather/64x64/day/116.png" alt="condition icon" id="temp-icon"><br/>
-                  <img src="./images/home.png" alt="Home icon" />
-               </div>
+                  <div id="more-info">
+                      <div class="checkbox">
+                            <label>
+                              <input type="checkbox" id="convert-temp" data-toggle="toggle" data-on="&#8451;" data-off="&#8457;">
+                              Toggle Temperature
+                            </label>
+                      </div>
+                      <hr id="divider"/>
+                      <p><i class="fa fa-flag-checkered fa-lg"></i> Windspeed: <span id="winds">54</span>mph</p>
+                      <hr id="divider"/>
+                      <div id="pressure"><i class="fa fa-tachometer fa-lg" aria-hidden="true"></i> Pressure: <span id="pres">1611</span>hPa</div>
+                      <hr id="divider"/>
+                      <div id="humidity"><i class="fa fa-tint fa-lg"></i> Humidity: <span id="hum">56</span>%</div>
+                </div>
+               
                 
               </div>
             </div>
-            <div class="col-sm-6">
-                <div id="more-info">
-                  <div id="conversion">
-                    <button type="button" class="btn" id="conversion-btn" >Convert to &#8457;</button>
-                  </div>
-                  <div id="wind"><i class="fa fa-flag-checkered fa-lg"></i> Windspeed: <span id="winds">54</span>mph</div>
-                  <div id="pressure"><i class="fa fa-tachometer fa-lg" aria-hidden="true"></i> Pressure: <span id="pres">1611</span>hPa</div>
-                  <div id="humidity"><i class="fa fa-tint fa-lg"></i> Humidity: <span id="hum">56</span>%</div>
-
-                </div>
-            </div>
-
-      
-          </div>
-
-          <div class="row">
-            <div id="extra-info">
-                <p>View forecast for the next 4 days below</p>
-                <i style="font-size:30px" class="fa">&#xf107;</i>
             </div>
             
-          </div>
-        
-        </div>
-        
-        <div class="row">
-          <div id="forecast-main">
-            <div class="col-sm-3" >
+            <div id="forecast-main">
+            <div class="col-sm-2" >
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day1">Loading info...</h4>
                 <img id="icon1" alt="Loading icon...">
                 <h4 id="temp1">Loading temp...</h4>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day2">Loading info...</h4>
                 <img id="icon2" alt="Loading icon...">
                 <h4 id="temp2">Loading temp...</h4>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day3">Loading info...</h4>
                 <img id="icon3" alt="Loading icon....">
                 <h4 id="temp3">Loading temp...</h4>
               </div>
             </div>
-            <div class="col-sm-3" >
+            <div class="col-sm-2" >
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day4">Loading info...</h4>
                 <img id="icon4" alt="Loading icon...">
                 <h4 id="temp4">Loading temp...</h4>
               </div>
             </div>
-            
           </div>
-        <!---->
+
+      
+          </div>
+        
         </div>
-      </div>
-      <div class="landing-page">
+        
+        <!---->
+
+        </div>
+        <div class="landing-page">
           <button type="button" href="#weather-content" class="btn btn-primary btn-md" id="getWeatherBtn" data-transition="flow">Get Weather</button>
       </div>
+      </div>
+      
         
   </div>
 
@@ -117,6 +115,7 @@
 
     <!--==============Bootstrap JQuery==============-->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
      <!--=============Custom JQuery==================-->
     <script src="./js/main.js"></script>
