@@ -54,10 +54,14 @@ $(document).ready(function(){
 				//Displaying info
 				$("#region").text(region);
 				$("#temp_c").html(temp_c+"<span>&#8451;</span>");
-				$("#conversion-btn").on("click",function(){
-
+				//toggle temperatures
+				var celc = $("#convert-temp").prop('checked');
+				console.log(celc);
+				if(celc == true){
+					$("#temp_c").html(temp_c+"<span>&#8451;</span>");
+				}else if(celc == false) {
 					$("#temp_c").html(temp_f+"<span>&#8457;</span>");
-				});
+				}
 
 				$("#temp-icon").attr('src',icon);
 				$("#description").text(description);
