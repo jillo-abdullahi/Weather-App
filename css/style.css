@@ -5,7 +5,7 @@ body{
 }
 .main {
 	width: 80%;
-	margin: 1rem auto;
+	margin: 0.5rem auto;
 	height: 60rem;
 	background-color: rgb(233, 240, 240);
   	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -89,4 +89,7 @@ body{
 }
 #header-box {
 	margin-top: 2px;
+}
+#temp-f {
+	display: none;
 }
