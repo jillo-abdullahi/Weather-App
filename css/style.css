@@ -126,7 +126,9 @@ body{
 	#forecast-main h4 {
 		font-size: 1.5rem;
 	}
-	
+	#getWeatherBtn {
+		font-size: 1.3rem;
+	}
 
 }
 
@@ -143,6 +145,10 @@ body{
 		font-size: 1.5rem;
 	}
 
+	#today-weather .well {
+		height: 51rem;
+	}
+	
 }
 
 @media only screen and (min-width: 801px) and (max-width: 1200px) {
@@ -152,5 +158,15 @@ body{
 	}
 	#last-forecast-day {
 		display: none;
+	}
+	.main {
+		height: 66rem;
+	}
+
+	#weather-box {
+		height: 57rem;
+	}
+	#today-weather .well {
+		height: 51rem;
 	}
 }
