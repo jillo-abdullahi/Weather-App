@@ -14,6 +14,8 @@ $(document).ready(function(){
 	$("#date").html( moment().format('MMMM Do YYYY, h:mm a') );
 	$("#day").html(moment().format('dddd') );
 
+	
+
 	function getWeatherInfo(){
 
 		//Get location
@@ -39,7 +41,6 @@ $(document).ready(function(){
 
 			//Ajax call for current weather
 			$.getJSON(weatheruri, function(info){
-				console.log(info.current.temp_c);
 
 				//setting up variables.
 				var region = info.location.region+", "+info.location.country;
@@ -53,15 +54,22 @@ $(document).ready(function(){
 
 				//Displaying info
 				$("#region").text(region);
-				$("#temp_c").html(temp_c+"<span>&#8451;</span>");
-				//toggle temperatures
-				var celc = $("#convert-temp").prop('checked');
-				console.log(celc);
-				if(celc == true){
-					$("#temp_c").html(temp_c+"<span>&#8451;</span>");
-				}else if(celc == false) {
-					$("#temp_c").html(temp_f+"<span>&#8457;</span>");
-				}
+				//Switch between celsius and fahrenheit
+  				$('.checkbox').on('change','#convert-temp',function(){
+						  //toggle temperature
+						  var celc = $(this).prop('checked');
+						 
+						  if (celc == false) {
+						    $("#temp_c").html(temp_c + "<span>&#8451;</span>");
+						  } else if (celc == true) {
+						    $("#temp_c").html(temp_f + "<span>&#8457;</span>");
+						  }
+						});
+
+						// set the default:
+						$("#temp_c").html(temp_c + "<span>&#8451;</span>");
+
+
 
 				$("#temp-icon").attr('src',icon);
 				$("#description").text(description);
