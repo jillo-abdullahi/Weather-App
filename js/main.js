@@ -5,14 +5,18 @@ $(document).ready(function(){
 	$("#getWeatherBtn").on("click", function(){
 		$("#weather-content").css("display","inline");
 		$(".landing-page").css("display","none");
-
-		getWeatherInfo();
 	});
 
+	getWeatherInfo();
 	//Get current date and time from Moment:
 
 	$("#date").html( moment().format('MMMM Do YYYY, h:mm a') );
 	$("#day").html(moment().format('dddd') );
+
+	//Loading skycon gif on landing page
+	var skycons = new Skycons({"color": ""});
+  	skycons.add("landing-gif", Skycons.PARTLY_CLOUDY_DAY);
+  	skycons.play();
 
 	
 
@@ -128,6 +132,10 @@ $(document).ready(function(){
 
 			function error(err) {
 			  console.warn(`ERROR(${err.code}): ${err.message}`);
+			  if(err.message=="User denied Geolocation"){
+
+			  	$('#weather-content').html("<h3 style='text-align: center;'>Please reload to enable location and proceed</h3>");
+			  }
 			};
 
 			//Possible errors to cater for:
