@@ -20,7 +20,7 @@
 
    <!--===========Font Awesome================-->
    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   
+
   </head>
   <body>
     <div class="container-fluid main">
@@ -36,7 +36,7 @@
             <div class="row">
             <h5 id="region">Some region</h5>
 
-            <div class="col-sm-4">
+            <div class="col-sm-8 col-md-8">
               <div id="today-weather">
                 <div class="well">
                 <h4>Today</h4>
@@ -65,29 +65,29 @@
             </div>
             
             <div id="forecast-main">
-            <div class="col-sm-2" >
+            <div class="col-sm-4 col-md-4 col-lg-2" >
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day1">Loading info...</h4>
                 <img id="icon1" src="https://cdn.apixu.com/weather/64x64/day/116.png" alt="Loading icon...">
                 <h4 id="temp1">Loading temp...</h4>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4 col-md-4 col-lg-2">
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day2">Loading info...</h4>
                 <img id="icon2" src="https://cdn.apixu.com/weather/64x64/day/116.png" alt="Loading icon...">
                 <h4 id="temp2">Loading temp...</h4>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-4 col-md-4 col-lg-2">
               <div class="well well-sm" style="text-align: center;">
                 <h4 id="day3">Loading info...</h4>
                 <img id="icon3" src="https://cdn.apixu.com/weather/64x64/day/116.png" alt="Loading icon....">
                 <h4 id="temp3">Loading temp...</h4>
               </div>
             </div>
-            <div class="col-sm-2" >
-              <div class="well well-sm" style="text-align: center;">
+            <div class="col-sm-4 col-md-4 col-lg-2" >
+              <div class="well well-sm" style="text-align: center;" id="last-forecast-day">
                 <h4 id="day4">Loading info...</h4>
                 <img id="icon4" src="https://cdn.apixu.com/weather/64x64/day/116.png" alt="Loading icon...">
                 <h4 id="temp4">Loading temp...</h4>
@@ -110,7 +110,7 @@
             <p>Please allow location and click below to get weather information.</p>
            </div> 
           <div id="access-btn-box">
-            <button type="button" class="btn btn-primary btn-md" id="getWeatherBtn" data-transition="flow">Let's go</button>
+            <button type="button" class="btn btn-success btn-md" id="getWeatherBtn" data-transition="flow">Let's go</button>
           </div>
       </div>
       </div>
@@ -134,5 +134,6 @@
     <!--=====Moment.js for dates===-->
      <script src="./js/moment.min.js"></script>
 
+     
   </body>
   </html>

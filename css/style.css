@@ -61,6 +61,24 @@ body{
 #getWeatherBtn {
 	margin: auto;
 	width: 100%;
+	font-size: 2.0rem;
+    padding: 1.25rem 2.5rem;
+    display: block;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#getWeatherBtn:hover {
+  background-color: #ffffff;
+  color: #009ac9;
+  border-color: #009ac9;
 }
 
 #today-weather .well {
@@ -92,4 +110,47 @@ body{
 }
 #temp-f {
 	display: none;
+}
+
+/*Some media queries*/
+
+/*Mobile*/
+@media only screen and (max-width: 450px) {
+	.main {
+		height: 136rem;
+	}
+
+	#weather-box {
+		height: 126rem;
+	}
+	#forecast-main h4 {
+		font-size: 1.5rem;
+	}
+	
+
+}
+
+@media only screen and (min-width: 451px) and (max-width: 800px) {
+
+	.main {
+		height: 136rem;
+	}
+
+	#weather-box {
+		height: 126rem;
+	}
+	#forecast-main h4 {
+		font-size: 1.5rem;
+	}
+
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1200px) {
+	
+	#forecast-main h4 {
+		font-size: 1.5rem;
+	}
+	#last-forecast-day {
+		display: none;
+	}
 }
