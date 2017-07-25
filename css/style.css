@@ -52,10 +52,10 @@ body{
 
 }
 
-.landing-page {
+#access-btn-box{
 	width: 35%;
-	margin: 25rem auto;
-	padding: 0px 0px 0px 0px;
+	margin: auto;
+
 }
 
 #getWeatherBtn {
