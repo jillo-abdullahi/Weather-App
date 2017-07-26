@@ -3,11 +3,13 @@ $(document).ready(function(){
 	
 	//Button on click to hide some stuff and show some other stuff :)
 	$("#getWeatherBtn").on("click", function(){
-		$("#weather-content").css("display","inline");
+		
 		$(".landing-page").css("display","none");
+
+		getLocation();
 	});
 
-	getWeatherInfo();
+	//getWeatherInfo();
 	//Get current date and time from Moment:
 
 	$("#date").html( moment().format('MMMM Do YYYY, h:mm a') );
@@ -18,11 +20,9 @@ $(document).ready(function(){
   	skycons.add("landing-gif", Skycons.PARTLY_CLOUDY_DAY);
   	skycons.play();
 
-	
 
-	function getWeatherInfo(){
-
-		//Get location
+  	//Location
+  		//Get location
 		var lat;
 		var longi;
 
@@ -37,7 +37,53 @@ $(document).ready(function(){
   			lat = crd.latitude;
   			longi = crd.longitude;
 
-  			//Setting up some variables for use later
+  			getWeatherInfo();
+  			
+			};//End of success function
+
+		function error(err) {
+			  
+			 $(".error-box").show();
+			switch(err.code) {
+				
+	        	case err.PERMISSION_DENIED:
+	        	$("#error-message").text("You have denied access to location! Reload to give it another try.");
+	            break;
+	        	case err.POSITION_UNAVAILABLE:
+	        	$("#error-message").text("Location information is unavailable. Please reload and try again.");
+	            break;
+	        	case err.TIMEOUT:
+	            $("#error-message").text("The request to get user location timed out. Please reload and try again.");
+	            break;
+	        	case err.UNKNOWN_ERROR:
+	            $("#error-message").text("An unknown error occurred. Please reload and try again.");
+	            break;
+    }
+			};//End of error function
+
+			function getLocation(){
+				if(navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(success, error, options);
+				}else {
+					$(".error-box").show();
+					$("#error-message").text("Geolocation is not supported by this browser.");
+				}
+			}
+			
+
+			
+			//Possible errors to cater for:
+			//Timeout expired
+			//Undefined
+
+  	//Location
+
+	
+
+	function getWeatherInfo(){
+
+			$("#weather-content").css("display","inline");
+			//Setting up some variables for use later
 			var key = "d46c15efe644412da4c135215172007";
 			var coords = lat+","+longi;
 			var weatheruri = "https://api.apixu.com/v1/current.json?key="+key+"&q="+coords;
@@ -95,10 +141,17 @@ $(document).ready(function(){
 
 			//Grabbing items from json file
 				//icons
+
+				//day
 				var icon1 = "https:"+weather.forecast.forecastday[1].day.condition.icon;
 				var icon2 = "https:"+weather.forecast.forecastday[2].day.condition.icon;			
 				var icon3 = "https:"+weather.forecast.forecastday[3].day.condition.icon;			
 				var icon4 = "https:"+weather.forecast.forecastday[4].day.condition.icon;
+
+				//night
+				var dayOrNight = weather.forecast.forecastday[1].hour.is_day;
+				console.log(dayOrNight);
+
 				
 				//max temperature
 				var temp1 = weather.forecast.forecastday[1].day.maxtemp_c;
@@ -128,26 +181,7 @@ $(document).ready(function(){
 			
 			});
 
-			};//End of success function
-
-			function error(err) {
-			  console.warn(`ERROR(${err.code}): ${err.message}`);
-			  if(err.message=="User denied Geolocation"){
-
-			  	$('#weather-content').html("<h3 style='text-align: center;'>Please reload to enable location and proceed</h3>");
-			  }
-			};
-
-			//Possible errors to cater for:
-			//Timeout expired
-			//Undefined
-
-			navigator.geolocation.getCurrentPosition(success, error, options);
-
-		
-
-		
 
 	}
-	
+
 });
