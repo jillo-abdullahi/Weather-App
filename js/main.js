@@ -3,13 +3,10 @@ $(document).ready(function(){
 	
 	//Button on click to hide some stuff and show some other stuff :)
 	$("#getWeatherBtn").on("click", function(){
-		
 		$(".landing-page").css("display","none");
 
 		getLocation();
 	});
-
-	//getWeatherInfo();
 	//Get current date and time from Moment:
 
 	$("#date").html( moment().format('MMMM Do YYYY, h:mm a') );
@@ -17,11 +14,11 @@ $(document).ready(function(){
 
 	//Loading skycon gif on landing page
 	var skycons = new Skycons({"color": ""});
-  	skycons.add("landing-gif", Skycons.PARTLY_CLOUDY_DAY);
+  	skycons.add("landing-gif", Skycons.RAIN);
   	skycons.play();
 
 
-  	//Location
+  	
   		//Get location
 		var lat;
 		var longi;
@@ -71,14 +68,6 @@ $(document).ready(function(){
 			}
 			
 
-			
-			//Possible errors to cater for:
-			//Timeout expired
-			//Undefined
-
-  	//Location
-
-	
 
 	function getWeatherInfo(){
 
@@ -142,16 +131,11 @@ $(document).ready(function(){
 			//Grabbing items from json file
 				//icons
 
-				//day
 				var icon1 = "https:"+weather.forecast.forecastday[1].day.condition.icon;
 				var icon2 = "https:"+weather.forecast.forecastday[2].day.condition.icon;			
 				var icon3 = "https:"+weather.forecast.forecastday[3].day.condition.icon;			
 				var icon4 = "https:"+weather.forecast.forecastday[4].day.condition.icon;
-
-				//night
-				var dayOrNight = weather.forecast.forecastday[1].hour.is_day;
-				console.log(dayOrNight);
-
+				
 				
 				//max temperature
 				var temp1 = weather.forecast.forecastday[1].day.maxtemp_c;
@@ -167,10 +151,13 @@ $(document).ready(function(){
 				$("#day4").text(day4);
 
 				//Setting icons
+				  //day
 				$("#icon1").attr('src',icon1);
 				$("#icon2").attr('src',icon2);
 				$("#icon3").attr('src',icon3);
 				$("#icon4").attr('src',icon4);
+
+
 
 				//maximum forecast temperatures
 				$("#temp1").html(temp1+"<span>&#8451;<span>");
